@@ -1,0 +1,224 @@
+/* ===== ESTILOS GERAIS ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* ===== EXERCÍCIO 1 - CHAT COM CSS ===== */
+.chat-container {
+    width: 100%;
+    max-width: 400px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.chat-header {
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.messages-container {
+    height: 400px;
+    overflow-y: auto;
+    padding: 20px;
+    background: #f8f9fa;
+}
+
+.message {
+    margin-bottom: 15px;
+    max-width: 80%;
+}
+
+.message.received {
+    float: left;
+    clear: both;
+}
+
+.message.sent {
+    float: right;
+    clear: both;
+}
+
+.message-content {
+    padding: 12px 15px;
+    border-radius: 18px;
+    word-wrap: break-word;
+}
+
+.received .message-content {
+    background: #e9ecef;
+    color: #2c3e50;
+    border-bottom-left-radius: 5px;
+}
+
+.sent .message-content {
+    background: #3498db;
+    color: white;
+    border-bottom-right-radius: 5px;
+}
+
+.time {
+    font-size: 0.7em;
+    color: #95a5a6;
+    display: block;
+    margin-top: 5px;
+}
+
+.chat-input {
+    display: flex;
+    padding: 15px;
+    background: white;
+    border-top: 1px solid #ecf0f1;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #bdc3c7;
+    border-radius: 25px;
+    outline: none;
+}
+
+.chat-input button {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* ===== EXERCÍCIO 2 - BANDEIRAS COM CSS ===== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+.nav-bandeiras {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.nav-bandeiras a {
+    display: inline-block;
+    margin: 0 15px;
+    padding: 10px 20px;
+    background: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background 0.3s ease;
+    font-weight: 500;
+}
+
+.nav-bandeiras a:hover {
+    background: #2980b9;
+}
+
+.container-bandeiras {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.bandeira {
+    width: 300px;
+    height: 200px;
+    border: 2px solid #34495e;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Bandeira Japão */
+#japao {
+    background: white;
+}
+
+.circulo-vermelho {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    background: #bc002d;
+    border-radius: 50%;
+}
+
+/* Bandeira Alemanha */
+#alemanha .faixa {
+    height: 33.33%;
+}
+
+#alemanha .preta { background: #000; }
+#alemanha .vermelha { background: #dd0000; }
+#alemanha .amarela { background: #ffce00; }
+
+/* Bandeira Holanda */
+#holanda .faixa {
+    height: 33.33%;
+}
+
+#holanda .vermelha-holanda { background: #ae1c28; }
+#holanda .branca { background: #fff; }
+#holanda .azul-holanda { background: #21468b; }
+
+/* Bandeira Itália */
+#italia .faixa {
+    width: 33.33%;
+    height: 100%;
+    float: left;
+}
+
+#italia .verde { background: #009246; }
+#italia .branca-italia { background: #fff; }
+#italia .vermelha-italia { background: #ce2b37; }
+
+/* Bandeira Brasil */
+#brasil {
+    background: #009b3a;
+}
+
+.losango {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 70%;
+    background: #fedf00;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.circulo-azul {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: #002776;
+    border-radius: 50%;
+}
