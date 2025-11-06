@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bandeiras com CSS</title>
+    <style>
+        /* Reset e estilos gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .nav-bandeiras {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .nav-bandeiras a {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 8px 16px;
+            background-color: #075e54;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-bandeiras a:hover {
+            background-color: #064940;
+        }
+
+        /* Classe base para todas as bandeiras */
+        .bandeira {
+            width: 300px;
+            height: 200px;
+            margin: 40px auto;
+            border: 2px solid #333;
+            position: relative;
+        }
+
+        /* Bandeira do Japão */
+        #japao {
+            background-color: white;
+        }
+
+        #japao .circulo {
+            width: 100px;
+            height: 100px;
+            background-color: #bc002d;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Bandeira da Alemanha */
+        #alemanha {
+            background: linear-gradient(to bottom, 
+                #000000 0%, #000000 33%, 
+                #dd0000 33%, #dd0000 66%, 
+                #ffce00 66%, #ffce00 100%);
+        }
+
+        /* Bandeira da Holanda */
+        #holanda {
+            background: linear-gradient(to bottom, 
+                #ae1c28 0%, #ae1c28 33%, 
+                #ffffff 33%, #ffffff 66%, 
+                #21468b 66%, #21468b 100%);
+        }
+
+        /* Bandeira da Itália */
+        #italia {
+            background: linear-gradient(to right, 
+                #009246 0%, #009246 33%, 
+                #ffffff 33%, #ffffff 66%, 
+                #ce2b37 66%, #ce2b37 100%);
+        }
+
+        /* Bandeira do Brasil */
+        #brasil {
+            background-color: #009739;
+            overflow: hidden;
+        }
+
+        #brasil .losango {
+            width: 180px;
+            height: 180px;
+            background-color: #fedd00;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        #brasil .circulo {
+            width: 100px;
+            height: 100px;
+            background-color: #2d4a9a;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .voltar-topo {
+            display: block;
+            text-align: center;
+            margin: 30px auto;
+            padding: 10px 20px;
+            background-color: #075e54;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            width: 150px;
+        }
+
+        .voltar-topo:hover {
+            background-color: #064940;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 50px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>🌍 Bandeiras com CSS</h1>
+    
+    <div class="nav-bandeiras">
+        <a href="#japao">Bandeira Japão</a>
+        <a href="#alemanha">Bandeira Alemanha</a>
+        <a href="#holanda">Bandeira Holanda</a>
+        <a href="#italia">Bandeira Itália</a>
+        <a href="#brasil">Bandeira Brasil</a>
+    </div>
+
+    <h2>Bandeira do Japão</h2>
+    <div id="japao" class="bandeira">
+        <div class="circulo"></div>
+    </div>
+
+    <h2>Bandeira da Alemanha</h2>
+    <div id="alemanha" class="bandeira"></div>
+
+    <h2>Bandeira da Holanda</h2>
+    <div id="holanda" class="bandeira"></div>
+
+    <h2>Bandeira da Itália</h2>
+    <div id="italia" class="bandeira"></div>
+
+    <h2>Bandeira do Brasil</h2>
+    <div id="brasil" class="bandeira">
+        <div class="losango"></div>
+        <div class="circulo"></div>
+    </div>
+
+    <a href="#" class="voltar-topo">↑ Voltar ao Topo</a>
+</body>
+</html>

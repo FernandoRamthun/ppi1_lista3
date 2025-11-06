@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Contatos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .lista-contatos {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .contato {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid #f0f0f0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .contato:hover {
+            background-color: #f8f9fa;
+            transform: translateX(5px);
+        }
+
+        .contato:last-child {
+            border-bottom: none;
+        }
+
+        .foto {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+            border: 3px solid #e9ecef;
+        }
+
+        .contato:hover .foto {
+            border-color: #667eea;
+        }
+
+        .info {
+            flex: 1;
+        }
+
+        .nome {
+            font-weight: bold;
+            color: #333;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .endereco {
+            color: #666;
+            display: flex;
+            align-items: center;
+            font-size: 0.95rem;
+        }
+
+        .endereco::before {
+            content: "©";
+            margin-right: 5px;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .status {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #28a745;
+            margin-left: 10px;
+        }
+
+        .status.offline {
+            background-color: #6c757d;
+        }
+
+        .status.ocupado {
+            background-color: #dc3545;
+        }
+
+        .header-lista {
+            background: #075e54;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            .contato {
+                padding: 15px;
+            }
+            
+            .foto {
+                width: 50px;
+                height: 50px;
+                margin-right: 15px;
+            }
+            
+            .nome {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📱 Lista de Contatos</h1>
+        
+        <div class="lista-contatos">
+            <div class="header-lista">
+                Meus Contatos
+            </div>
+            
+            <!-- Contato 1 -->
+            <div class="contato">
+                <img src="Linda_Hart.png" alt="Linda Hart" class="foto">
+                <div class="info">
+                    <div class="nome">Linda Hart</div>
+                    <div class="endereco">705 Stanley Lane Drive</div>
+                </div>
+                <div class="status"></div>
+            </div>
+            
+            <!-- Contato 2 -->
+            <div class="contato">
+                <img src="Roger_Medina.png" alt="Roger Medina" class="foto">
+                <div class="info">
+                    <div class="nome">Roger Medina</div>
+                    <div class="endereco">450 Piedbook Way</div>
+                </div>
+                <div class="status ocupado"></div>
+            </div>
+            
+            <!-- Contato 3 -->
+            <div class="contato">
+                <img src="Dean_Sullivan.png" alt="Dean Sullivan" class="foto">
+                <div class="info">
+                    <div class="nome">Dean Sullivan</div>
+                    <div class="endereco">127 Alquares Avenue</div>
+                </div>
+                <div class="status offline"></div>
+            </div>
+            
+            <!-- Contato 4 -->
+            <div class="contato">
+                <img src="Elizabeth_Austin.png" alt="Elizabeth Austin" class="foto">
+                <div class="info">
+                    <div class="nome">Elizabeth Austin</div>
+                    <div class="endereco">638 Bresson Hill Road</div>
+                </div>
+                <div class="status"></div>
+            </div>
+            
+            <!-- Contato 5 -->
+            <div class="contato">
+                <img src="Carlos_Silva.png" alt="Carlos Silva" class="foto">
+                <div class="info">
+                    <div class="nome">Carlos Silva</div>
+                    <div class="endereco">289 Oak Street</div>
+                </div>
+                <div class="status"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
