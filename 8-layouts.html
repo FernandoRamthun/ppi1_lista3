@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 8 - Layout Responsivo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            grid-template-rows: 1fr 1fr 1fr auto;
+            gap: 15px;
+            height: 400px;
+            margin-bottom: 20px;
+        }
+
+        .block {
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        .orange { 
+            background: #FF9800; 
+            grid-row: 1 / 4; 
+            grid-column: 2;
+        }
+
+        .green { background: #4CAF50; }
+        .purple { background: #9C27B0; }
+        .blue { background: #2196F3; }
+
+        .dots-container {
+            grid-column: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            padding: 10px;
+        }
+
+        .dot {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+
+        .dot.pink { background: #E91E63; }
+        .dot.blue { background: #2196F3; }
+        .dot.green { background: #4CAF50; }
+        .dot.orange { background: #FF9800; }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Media Query para dispositivos abaixo de 500px */
+        @media screen and (max-width: 500px) {
+            .layout {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                height: auto;
+            }
+            
+            .orange {
+                grid-row: auto;
+                grid-column: 1;
+                min-height: 150px;
+            }
+            
+            .dots-container {
+                grid-column: 1;
+                flex-wrap: wrap;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Atividade 8 - Layout Responsivo</h1>
+        
+        <div class="layout">
+            <div class="block green">Bloco Verde</div>
+            <div class="block orange">Bloco Laranja</div>
+            <div class="block purple">Bloco Lilás</div>
+            <div class="block blue">Bloco Azul</div>
+            
+            <div class="dots-container">
+                <div class="dot pink"></div>
+                <div class="dot blue"></div>
+                <div class="dot green"></div>
+                <div class="dot orange"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

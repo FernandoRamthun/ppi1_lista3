@@ -1,106 +1,127 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chat</title>
-<style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body {
-    font-family: sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: #f0f0f0;
-  }
-  .chat-container {
-    display: flex;
-    flex-direction: column;
-    width: 360px;
-    height: 600px;
-    background: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  .chat-header {
-    background: #075e54;
-    color: #fff;
-    text-align: center;
-    padding: 12px;
-  }
-  .chat-messages {
-    flex: 1;
-    padding: 12px;
-    overflow-y: auto;
-  }
-  .message {
-    max-width: 70%;
-    margin-bottom: 10px;
-    padding: 8px 10px;
-    border-radius: 8px;
-    word-wrap: break-word;
-  }
-  .received {
-    background: #e5ddd5;
-    align-self: flex-start;
-  }
-  .sent {
-    background: #dcf8c6;
-    align-self: flex-end;
-  }
-  .message-time {
-    font-size: 0.7rem;
-    color: #666;
-    text-align: right;
-    margin-top: 2px;
-  }
-  .chat-input {
-    display: flex;
-    padding: 10px;
-    border-top: 1px solid #ddd;
-    gap: 6px;
-  }
-  .chat-input input {
-    flex: 1;
-    padding: 8px 12px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    outline: none;
-  }
-  .chat-input button {
-    background: #075e54;
-    color: #fff;
-    border: none;
-    padding: 8px 14px;
-    border-radius: 20px;
-    cursor: pointer;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat com CSS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f0f0f0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .chat-container {
+            width: 360px;
+            height: 600px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            background-color: #075e54;
+            color: white;
+            padding: 16px;
+            text-align: center;
+            position: relative;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 16px;
+            overflow-y: auto;
+        }
+
+        .message {
+            max-width: 70%;
+            margin-bottom: 12px;
+            clear: both;
+        }
+
+        .received {
+            float: left;
+            background-color: #e5ddd5;
+            border-radius: 8px 8px 8px 0;
+            padding: 10px;
+        }
+
+        .sent {
+            float: right;
+            background-color: #dcf8c6;
+            border-radius: 8px 8px 0 8px;
+            padding: 10px;
+        }
+
+        .message-time {
+            font-size: 0.75rem;
+            color: #666;
+            text-align: right;
+            margin-top: 4px;
+        }
+
+        .chat-input {
+            padding: 12px;
+            border-top: 1px solid #ddd;
+            display: flex;
+            gap: 8px;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            outline: none;
+        }
+
+        .chat-input button {
+            background-color: #075e54;
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-<div class="chat-container">
-  <div class="chat-header">Chat IFSC</div>
+    <div class="chat-container">
+        <header class="chat-header">
+            <h2>Chat IFSC</h2>
+        </header>
 
-  <div class="chat-messages">
-    <div class="message received">
-      Olá, tudo bem?
-      <div class="message-time">10:15</div>
-    </div>
-    <div class="message sent">
-      Tudo sim! E contigo?
-      <div class="message-time">10:16</div>
-    </div>
-    <div class="message received">
-      Estou fazendo a lista de CSS do IFSC!
-      <div class="message-time">10:17</div>
-    </div>
-  </div>
+        <div class="chat-messages">
+            <div class="message received">
+                <p>Olá, tudo bem?</p>
+                <div class="message-time">10:15</div>
+            </div>
+            <div class="message sent">
+                <p>Tudo sim! E contigo?</p>
+                <div class="message-time">10:16</div>
+            </div>
+            <div class="message received">
+                <p>Estou fazendo a lista de CSS do IFSC!</p>
+                <div class="message-time">10:17</div>
+            </div>
+        </div>
 
-  <div class="chat-input">
-    <input type="text" placeholder="Digite sua mensagem...">
-    <button>Enviar</button>
-  </div>
-</div>
+        <div class="chat-input">
+            <input type="text" placeholder="Digite sua mensagem...">
+            <button>Enviar</button>
+        </div>
+    </div>
 </body>
 </html>

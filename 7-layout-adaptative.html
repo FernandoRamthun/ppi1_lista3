@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atividade 7 - Layout Adaptativo</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+
+  body {
+    display: grid;
+    grid-template-areas:
+      "header header header"
+      "banner banner banner"
+      "left main right"
+      "low low low"
+      "footer footer footer";
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: auto auto 1fr auto auto;
+    gap: 10px;
+    min-height: 100vh;
+    background: #f1f1f1;
+    padding: 10px;
+  }
+
+  header {
+    grid-area: header;
+    background: #ff5733;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  .banner {
+    grid-area: banner;
+    background: #ff8c33;
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+  }
+
+  .left {
+    grid-area: left;
+    background: #33cc66;
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  main {
+    grid-area: main;
+    background: #3399ff;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  .right {
+    grid-area: right;
+    background: #ffcc33;
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  .low {
+    grid-area: low;
+    background: #99cc33;
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+  }
+
+  footer {
+    grid-area: footer;
+    background: #33cccc;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  /* ====== MODO MOBILE ====== */
+  @media screen and (max-width: 768px) {
+    body {
+      grid-template-areas:
+        "header"
+        "banner"
+        "main"
+        "left"
+        "right"
+        "low"
+        "footer";
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>Header</header>
+  <div class="banner">Banner</div>
+  <div class="left">Left Aside</div>
+  <main>Main Content<br>Width: 431, Height: 873</main>
+  <div class="right">Right Aside</div>
+  <div class="low">Low Content</div>
+  <footer>Footer</footer>
+</body>
+</html>
