@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Layout com Flexbox</title>
     <style>
-        /* Reset básico */
         * {
             margin: 0;
             padding: 0;
@@ -15,15 +14,19 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             width: 100vw;
-            height: 100vh;
-            overflow: hidden;
+            min-height: 100vh;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            background: #f0f0f0;
         }
 
         .container {
             display: flex;
             flex-direction: column;
             width: 100vw;
-            height: 100vh;
+            min-height: 100vh;
+            flex: 1;
         }
 
         /* Header */
@@ -168,6 +171,13 @@
                 margin-bottom: 0;
             }
         }
+
+        /* Botão de voltar */
+        .voltar {
+            text-align: center;
+            padding: 20px;
+            background: #f0f0f0;
+        }
     </style>
 </head>
 <body>
@@ -216,10 +226,15 @@
                 <strong>RODAPÉ</strong>
             </div>
             <div class="footer-location">
-                Instituto Federal de Santa Catarina – Reitoria<br>
+                Instituto Federal de Santa Catarina <br>
                 Gaspar/SC | www.ifsc.edu.br<br>
             </div>
         </footer>
+    </div>
+
+    <!-- Botão de voltar ao index -->
+    <div class="voltar">
+        <a href="index.html">Voltar ao Index</a>
     </div>
 </body>
 </html>
