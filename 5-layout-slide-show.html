@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Show com Flex e Transition</title>
+    <style>
+        /* [O CSS permanece exatamente o mesmo] */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            text-align: center;
+        }
+
+        h1 {
+            color: white;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+        }
+
+        .slideshow {
+            display: flex;
+            height: 400px;
+            gap: 15px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .slide {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .slide .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 30px 20px 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .slide:hover {
+            flex: 3;
+            transform: translateY(-10px);
+        }
+
+        .slide:hover img {
+            transform: scale(1.05);
+        }
+
+        .slide:hover .overlay {
+            transform: translateY(0);
+        }
+
+        .slide-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .slide-desc {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .slideshow:hover .slide:not(:hover) {
+            opacity: 0.7;
+            filter: blur(1px);
+        }
+
+        .indicators {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 25px;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .indicator:hover {
+            background: rgba(255, 255, 255, 0.7);
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 768px) {
+            .slideshow {
+                height: 300px;
+                gap: 10px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .slideshow {
+                flex-direction: column;
+                height: auto;
+                gap: 8px;
+            }
+            
+            .slide {
+                height: 200px;
+            }
+            
+            .slide:hover {
+                flex: 2;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Galeria Interativa</h1>
+        
+        <div class="slideshow">
+            <div class="slide">
+                <img src="montanhas.jpg" alt="Montanhas">
+                <div class="overlay">
+                    <div class="slide-title">Montanhas</div>
+                    <div class="slide-desc">Paisagem natural das cordilheiras</div>
+                </div>
+            </div>
+            
+            <div class="slide">
+                <img src="cidade.jpg" alt="Cidade">
+                <div class="overlay">
+                    <div class="slide-title">Cidade</div>
+                    <div class="slide-desc">Arquitetura urbana moderna</div>
+                </div>
+            </div>
+            
+            <div class="slide">
+                <img src="floresta.jpg" alt="Floresta">
+                <div class="overlay">
+                    <div class="slide-title">Floresta</div>
+                    <div class="slide-desc">Natureza preservada e vida selvagem</div>
+                </div>
+            </div>
+            
+            <div class="slide">
+                <img src="praia.jpg" alt="Praia">
+                <div class="overlay">
+                    <div class="slide-title">Praia</div>
+                    <div class="slide-desc">Águas cristalinas e areia branca</div>
+                </div>
+            </div>
+            
+            <div class="slide">
+                <img src="por_do_sol.jpg" alt="Pôr do Sol">
+                <div class="overlay">
+                    <div class="slide-title">Pôr do Sol</div>
+                    <div class="slide-desc">Cores vibrantes no horizonte</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="indicators">
+            <div class="indicator"></div>
+            <div class="indicator"></div>
+            <div class="indicator"></div>
+            <div class="indicator"></div>
+            <div class="indicator"></div>
+        </div>
+    </div>
+</body>
+</html>
