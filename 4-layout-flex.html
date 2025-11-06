@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout com Flexbox</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #075e54, #128c7e);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Conteúdo principal - lado a lado */
+        .main-content {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        /* Navegação lateral */
+        .navigation {
+            width: 250px;
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        }
+
+        .navigation h2 {
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            border-bottom: 2px solid #34495e;
+            padding-bottom: 10px;
+        }
+
+        .nav-links {
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-bottom: 15px;
+        }
+
+        .nav-links a {
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background: #34495e;
+            transform: translateX(5px);
+        }
+
+        /* Área de conteúdo direito */
+        .content-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Cabeçalho do conteúdo */
+        .content-header {
+            background: #34495e;
+            color: white;
+            padding: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Área de conteúdo principal */
+        .content {
+            flex: 1;
+            background: #ecf0f1;
+            padding: 30px;
+            overflow-y: auto;
+        }
+
+        .content h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .content p {
+            line-height: 1.6;
+            color: #34495e;
+            margin-bottom: 15px;
+        }
+
+        /* Rodapé */
+        .footer {
+            background: linear-gradient(135deg, #075e54, #128c7e);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer-info {
+            margin-bottom: 10px;
+        }
+
+        .footer-location {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .navigation {
+                width: 200px;
+            }
+            
+            .header, .content-header {
+                padding: 15px;
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .navigation {
+                width: 100%;
+                height: auto;
+            }
+            
+            .nav-links {
+                display: flex;
+                gap: 10px;
+                overflow-x: auto;
+            }
+            
+            .nav-links li {
+                margin-bottom: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Cabeçalho -->
+        <header class="header">
+            INSTITUTO FEDERAL DE SANTA CATARINA
+        </header>
+
+        <!-- Conteúdo Principal -->
+        <div class="main-content">
+            <!-- Navegação -->
+            <nav class="navigation">
+                <h2>NAVEGAÇÃO</h2>
+                <ul class="nav-links">
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Cursos</a></li>
+                    <li><a href="#">Professores</a></li>
+                    <li><a href="#">Calendário</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#">Sobre</a></li>
+                </ul>
+            </nav>
+
+            <!-- Área de Conteúdo -->
+            <div class="content-area">
+                <!-- Cabeçalho do Conteúdo -->
+                <div class="content-header">
+                    CABEÇALHO
+                </div>
+
+                <!-- Conteúdo Principal -->
+                <main class="content">
+                    <h2>CONTEÚDO PRINCIPAL</h2>
+                    <p>Bem-vindo ao portal do Instituto Federal de Santa Catarina. Aqui você encontra informações sobre nossos cursos, eventos e projetos.</p>
+                    <p>O IFSC é uma instituição comprometida com a educação profissional e tecnológica, oferecendo ensino de qualidade para transformar vidas e comunidades.</p>
+                    <p>Navegue pelo menu lateral para acessar as diferentes seções do nosso portal e conhecer mais sobre nosso trabalho.</p>
+                    <p>Estamos sempre em busca da excelência acadêmica e do desenvolvimento sustentável da nossa região.</p>
+                </main>
+            </div>
+        </div>
+
+        <!-- Rodapé -->
+        <footer class="footer">
+            <div class="footer-info">
+                <strong>RODAPÉ</strong>
+            </div>
+            <div class="footer-location">
+                Instituto Federal de Santa Catarina – Reitoria<br>
+                Gaspar/SC | www.ifsc.edu.br<br>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
